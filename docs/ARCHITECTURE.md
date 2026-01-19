@@ -4,6 +4,7 @@
 
 | 項目 | 技術 | 理由 |
 |------|------|------|
+| ランタイム | Bun | 高速、TypeScript ネイティブ対応 |
 | フレームワーク | Hono v4 | 軽量、SSG 対応、JSX サポート |
 | 言語 | TypeScript | 型安全、開発体験向上 |
 | ビルドツール | Vite | 高速、Hono 公式サポート |
@@ -58,6 +59,7 @@ my_blog/
 ├── dist/                    # ビルド出力（.gitignore 対象）
 │
 ├── package.json
+├── bun.lockb                # Bun ロックファイル
 ├── tsconfig.json
 ├── vite.config.ts
 └── wrangler.toml            # Cloudflare Pages 設定
@@ -249,15 +251,15 @@ bucket = "./dist"
 2. GitHub リポジトリを選択
 3. ビルド設定:
    - Framework preset: None
-   - Build command: `npm run build`
+   - Build command: `bun run build`
    - Build output directory: `dist`
 4. 保存 → 自動デプロイ開始
 
 ### 手動デプロイ
 
 ```bash
-npm run build
-npx wrangler pages deploy ./dist --project-name=my-blog
+bun run build
+bunx wrangler pages deploy ./dist --project-name=my-blog
 ```
 
 ---
@@ -267,15 +269,15 @@ npx wrangler pages deploy ./dist --project-name=my-blog
 ### ローカル開発
 
 ```bash
-npm run dev
+bun run dev
 # http://localhost:5173 で開発サーバー起動
 ```
 
 ### ビルド & プレビュー
 
 ```bash
-npm run build
-npm run preview
+bun run build
+bun run preview
 # http://localhost:4173 でビルド結果を確認
 ```
 

@@ -16,11 +16,11 @@
 
 ## Phase 1: プロジェクト初期化
 
-**ゴール**: 開発環境のセットアップが完了し、`npm run dev` で起動できる
+**ゴール**: 開発環境のセットアップが完了し、`bun run dev` で起動できる
 
 **タスク**
 - [ ] `package.json` を作成
-- [ ] 依存パッケージをインストール
+- [ ] `bun install` で依存パッケージをインストール
 - [ ] `tsconfig.json` を作成
 - [ ] `vite.config.ts` を作成
 - [ ] ディレクトリ構成を作成
@@ -28,6 +28,7 @@
 
 **成果物**
 - package.json
+- bun.lockb
 - tsconfig.json
 - vite.config.ts
 - .gitignore
@@ -42,8 +43,8 @@
 **タスク**
 - [ ] `src/app.tsx` を作成（Hono アプリの基本構成）
 - [ ] シンプルな JSX コンポーネントを作成
-- [ ] `npm run dev` で動作確認
-- [ ] `npm run build` で SSG ビルド確認
+- [ ] `bun run dev` で動作確認
+- [ ] `bun run build` で SSG ビルド確認
 - [ ] `dist/index.html` が生成されることを確認
 
 **成果物**
