@@ -4,7 +4,7 @@
 
 | Phase | 内容 | 状態 |
 |-------|------|------|
-| 1 | プロジェクト初期化 | 未着手 |
+| 1 | プロジェクト初期化 | 完了 |
 | 2 | 最小構成の Hono アプリ | 未着手 |
 | 3 | 記事ページの実装 | 未着手 |
 | 4 | Markdown 対応 | 未着手 |
@@ -19,12 +19,12 @@
 **ゴール**: 開発環境のセットアップが完了し、`bun run dev` で起動できる
 
 **タスク**
-- [ ] `package.json` を作成
-- [ ] `bun install` で依存パッケージをインストール
-- [ ] `tsconfig.json` を作成
-- [ ] `vite.config.ts` を作成
-- [ ] ディレクトリ構成を作成
-- [ ] Git 初期化 & `.gitignore` 設定
+- [x] `package.json` を作成
+- [x] `bun install` で依存パッケージをインストール
+- [x] `tsconfig.json` を作成
+- [x] `vite.config.ts` を作成
+- [x] ディレクトリ構成を作成
+- [x] Git 初期化 & `.gitignore` 設定
 
 **成果物**
 - package.json
@@ -193,3 +193,10 @@
 - ARCHITECTURE.md 完成
 - PROGRESS.md 完成
 - 次: Phase 1（プロジェクト初期化）へ
+
+### 2025-01-20
+- Phase 1 完了
+- package.json, tsconfig.json, vite.config.ts, .gitignore 作成
+- ディレクトリ構成作成
+- bun run build & preview で動作確認 OK
+- 次: Phase 2（最小構成の Hono アプリ）へ
