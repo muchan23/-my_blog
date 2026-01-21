@@ -6,7 +6,7 @@
 |-------|------|------|
 | 1 | プロジェクト初期化 | 完了 |
 | 2 | 最小構成の Hono アプリ | 完了 |
-| 3 | 記事ページの実装 | 未着手 |
+| 3 | 記事ページの実装 | 完了 |
 | 4 | Markdown 対応 | 未着手 |
 | 5 | 一覧・アーカイブ・タグページ | 未着手 |
 | 6 | スタイリング | 未着手 |
@@ -63,13 +63,13 @@
 **ゴール**: ハードコードした記事データを表示できる
 
 **タスク**
-- [ ] `src/types/index.ts` を作成（Post 型定義）
-- [ ] `src/components/Layout.tsx` を作成
-- [ ] `src/components/Header.tsx` を作成
-- [ ] `src/components/Footer.tsx` を作成
-- [ ] `/posts/:slug` ルートを追加
-- [ ] 記事ページコンポーネントを作成
-- [ ] ハードコードしたサンプル記事で動作確認
+- [x] `src/types/index.ts` を作成（Post 型定義）
+- [x] `src/components/Layout.tsx` を作成
+- [x] `src/components/Header.tsx` を作成
+- [x] `src/components/Footer.tsx` を作成
+- [x] `/posts/:slug` ルートを追加
+- [x] 記事ページコンポーネントを作成
+- [x] ハードコードしたサンプル記事で動作確認
 
 **成果物**
 - src/types/index.ts
@@ -208,3 +208,11 @@
 - @hono/vite-dev-server を追加し、dev サーバーで動作確認 OK
 - bun run build で SSG ビルド確認 OK、dist/index.html 生成
 - 次: Phase 3（記事ページの実装）へ
+
+### 2025-01-21（続き）
+- Phase 3 完了
+- src/types/index.ts 作成（Post 型定義）
+- src/components/Header.tsx, Footer.tsx, Layout.tsx 作成
+- /posts/:slug ルートを追加、記事ページを実装
+- ハードコードしたサンプル記事で動作確認 OK
+- 次: Phase 4（Markdown 対応）へ
