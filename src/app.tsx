@@ -1,41 +1,36 @@
 import { Hono } from "hono";
 import { Layout } from "./components/Layout";
-import type { Post } from "./types";
+import { getAllPosts, getPostBySlug } from "./lib/posts";
+import type { TocItem } from "./lib/markdown";
 
 const app = new Hono();
 
-// ハードコードしたサンプル記事
-const samplePosts: Post[] = [
-  {
-    slug: "hello-world",
-    title: "Hello World",
-    date: "2025-01-21",
-    tags: ["hono", "typescript"],
-    description:
-      "これは最初のブログ記事です。Hono と SSG を使って構築しています。",
-    content:
-      "<p>こんにちは！これは最初のブログ記事です。</p><p>Hono と Vite SSG を使ってブログを構築しています。</p>",
-    readingTime: 1,
-  },
-  {
-    slug: "getting-started-with-hono",
-    title: "Hono を始めよう",
-    date: "2025-01-20",
-    tags: ["hono", "tutorial"],
-    description: "Hono フレームワークの基本的な使い方を紹介します。",
-    content:
-      "<p>Hono は軽量で高速な Web フレームワークです。</p><p>Edge での実行に最適化されています。</p>",
-    readingTime: 3,
-  },
-];
+// 目次コンポーネント
+const TableOfContents = ({ toc }: { toc: TocItem[] }) => {
+  if (toc.length === 0) return null;
+  return (
+    <nav class="toc">
+      <h2>目次</h2>
+      <ul>
+        {toc.map((item) => (
+          <li style={`margin-left: ${(item.level - 2) * 1}rem`}>
+            <a href={`#${item.id}`}>{item.text}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
 // トップページ
-app.get("/", (c) => {
+app.get("/", async (c) => {
+  const posts = await getAllPosts();
+
   return c.html(
     <Layout title="My Blog" description="技術ブログ">
       <h1>My Blog</h1>
       <div class="posts">
-        {samplePosts.map((post) => (
+        {posts.map((post) => (
           <article class="post-card">
             <h2>
               <a href={`/posts/${post.slug}`}>{post.title}</a>
@@ -53,9 +48,9 @@ app.get("/", (c) => {
 });
 
 // 記事ページ
-app.get("/posts/:slug", (c) => {
+app.get("/posts/:slug", async (c) => {
   const slug = c.req.param("slug");
-  const post = samplePosts.find((p) => p.slug === slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     return c.html(
@@ -86,6 +81,7 @@ app.get("/posts/:slug", (c) => {
             ))}
           </div>
         </header>
+        <TableOfContents toc={post.toc} />
         <div
           class="post-content"
           dangerouslySetInnerHTML={{ __html: post.content }}

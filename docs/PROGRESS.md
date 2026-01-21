@@ -7,7 +7,7 @@
 | 1 | プロジェクト初期化 | 完了 |
 | 2 | 最小構成の Hono アプリ | 完了 |
 | 3 | 記事ページの実装 | 完了 |
-| 4 | Markdown 対応 | 未着手 |
+| 4 | Markdown 対応 | 完了 |
 | 5 | 一覧・アーカイブ・タグページ | 未着手 |
 | 6 | スタイリング | 未着手 |
 | 7 | 追加機能とデプロイ | 未着手 |
@@ -90,13 +90,13 @@
 **ゴール**: Markdown ファイルから記事を読み込み、HTML に変換して表示できる
 
 **タスク**
-- [ ] `content/posts/` にサンプル記事を作成
-- [ ] `src/lib/markdown.ts` を作成（Markdown → HTML 変換）
-- [ ] `src/lib/posts.ts` を作成（記事データの読み込み）
-- [ ] frontmatter のパース（gray-matter）
-- [ ] シンタックスハイライトの実装（shiki）
-- [ ] 目次の自動生成
-- [ ] 読了時間の計算
+- [x] `content/posts/` にサンプル記事を作成
+- [x] `src/lib/markdown.ts` を作成（Markdown → HTML 変換）
+- [x] `src/lib/posts.ts` を作成（記事データの読み込み）
+- [x] frontmatter のパース（gray-matter）
+- [x] シンタックスハイライトの実装（shiki）
+- [x] 目次の自動生成
+- [x] 読了時間の計算
 
 **成果物**
 - content/posts/sample-post.md
@@ -216,3 +216,12 @@
 - /posts/:slug ルートを追加、記事ページを実装
 - ハードコードしたサンプル記事で動作確認 OK
 - 次: Phase 4（Markdown 対応）へ
+
+### 2025-01-21（続き2）
+- Phase 4 完了
+- content/posts/ にサンプル記事を2つ作成
+- src/lib/markdown.ts 作成（unified/remark/rehype パイプライン、shiki シンタックスハイライト、目次自動生成）
+- src/lib/posts.ts 作成（gray-matter で frontmatter パース、読了時間計算）
+- app.tsx を更新し、Markdown ファイルから記事を読み込んで表示
+- 動作確認 OK
+- 次: Phase 5（一覧・アーカイブ・タグページ）へ
