@@ -5,7 +5,7 @@
 | Phase | 内容 | 状態 |
 |-------|------|------|
 | 1 | プロジェクト初期化 | 完了 |
-| 2 | 最小構成の Hono アプリ | 未着手 |
+| 2 | 最小構成の Hono アプリ | 完了 |
 | 3 | 記事ページの実装 | 未着手 |
 | 4 | Markdown 対応 | 未着手 |
 | 5 | 一覧・アーカイブ・タグページ | 未着手 |
@@ -41,11 +41,11 @@
 **ゴール**: トップページに「Hello World」が表示され、SSG でビルドできる
 
 **タスク**
-- [ ] `src/app.tsx` を作成（Hono アプリの基本構成）
-- [ ] シンプルな JSX コンポーネントを作成
-- [ ] `bun run dev` で動作確認
-- [ ] `bun run build` で SSG ビルド確認
-- [ ] `dist/index.html` が生成されることを確認
+- [x] `src/app.tsx` を作成（Hono アプリの基本構成）
+- [x] シンプルな JSX コンポーネントを作成
+- [x] `bun run dev` で動作確認
+- [x] `bun run build` で SSG ビルド確認
+- [x] `dist/index.html` が生成されることを確認
 
 **成果物**
 - src/app.tsx
@@ -200,3 +200,11 @@
 - ディレクトリ構成作成
 - bun run build & preview で動作確認 OK
 - 次: Phase 2（最小構成の Hono アプリ）へ
+
+### 2025-01-21
+- Phase 2 完了
+- src/app.tsx 作成（Hello World 表示）
+- src/components/Page.tsx 作成（再利用可能な JSX コンポーネント）
+- @hono/vite-dev-server を追加し、dev サーバーで動作確認 OK
+- bun run build で SSG ビルド確認 OK、dist/index.html 生成
+- 次: Phase 3（記事ページの実装）へ
