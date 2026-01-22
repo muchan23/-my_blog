@@ -35,8 +35,8 @@ app.get("/", async (c) => {
   const posts = await getAllPosts();
 
   return c.html(
-    <Layout title="My Blog" description="技術ブログ">
-      <h1>My Blog</h1>
+    <Layout title="muchan log" description="技術ブログ">
+      <h1>muchan log</h1>
       <div class="posts">
         {posts.map((post) => (
           <PostCard post={post} />
@@ -206,8 +206,8 @@ app.get("/about", (c) => {
 app.get("/feed.xml", async (c) => {
   const posts = await getAllPosts();
   const latestPosts = posts.slice(0, 20);
-  const siteUrl = "https://example.com"; // TODO: 実際のURLに変更
-  const siteName = "My Blog";
+  const siteUrl = "https://muchan-log.pages.dev"; // TODO: 実際のURLに変更
+  const siteName = "muchan log";
 
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

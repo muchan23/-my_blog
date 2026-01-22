@@ -5,7 +5,7 @@ type HeaderProps = {
   siteTitle?: string;
 };
 
-export const Header: FC<HeaderProps> = ({ siteTitle = "My Blog" }) => {
+export const Header: FC<HeaderProps> = ({ siteTitle = "muchan log" }) => {
   return (
     <header>
       <nav>
