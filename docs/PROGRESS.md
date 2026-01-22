@@ -9,7 +9,7 @@
 | 3 | 記事ページの実装 | 完了 |
 | 4 | Markdown 対応 | 完了 |
 | 5 | 一覧・アーカイブ・タグページ | 完了 |
-| 6 | スタイリング | 未着手 |
+| 6 | スタイリング | 完了 |
 | 7 | 追加機能とデプロイ | 未着手 |
 
 ---
@@ -140,14 +140,14 @@
 **ゴール**: ミニマルで読みやすいデザインが完成
 
 **タスク**
-- [ ] `public/styles/main.css` を作成
-- [ ] レイアウト（ヘッダー、フッター、メイン）
-- [ ] タイポグラフィ（フォント、行間、見出し）
-- [ ] コードブロックのスタイル
-- [ ] レスポンシブ対応
-- [ ] ダークモード対応
-- [ ] ダークモード切替 UI（ThemeToggle）
-- [ ] `public/scripts/theme.js` を作成
+- [x] `public/styles/main.css` を作成
+- [x] レイアウト（ヘッダー、フッター、メイン）
+- [x] タイポグラフィ（フォント、行間、見出し）
+- [x] コードブロックのスタイル
+- [x] レスポンシブ対応
+- [x] ダークモード対応
+- [x] ダークモード切替 UI（ThemeToggle）
+- [x] `public/scripts/theme.js` を作成
 
 **成果物**
 - public/styles/main.css
@@ -239,3 +239,15 @@
 - vite.config.ts にカスタムプラグインを追加して feed.xml を正しく出力
 - ビルド確認 OK
 - 次: Phase 6（スタイリング）へ
+
+### 2025-01-22（続き）
+- Phase 6 完了
+- public/styles/main.css 作成（CSS変数、レイアウト、タイポグラフィ、コードブロック）
+- public/scripts/theme.js 作成（ダークモード切替、localStorage保存、システム設定検知）
+- src/components/ThemeToggle.tsx 作成
+- Header.tsx に ThemeToggle を追加
+- Layout.tsx に CSS と JS を読み込み
+- レスポンシブ対応（768px, 480px ブレークポイント）
+- ダークモード対応（システム設定自動検知、手動切替、永続化）
+- 動作確認 OK
+- 次: Phase 7（追加機能とデプロイ）へ
