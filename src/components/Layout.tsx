@@ -1,11 +1,11 @@
-import type { FC, PropsWithChildren } from 'hono/jsx'
-import { Header } from './Header'
-import { Footer } from './Footer'
+import type { FC, PropsWithChildren } from "hono/jsx";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 type LayoutProps = PropsWithChildren<{
-  title: string
-  description?: string
-}>
+  title: string;
+  description?: string;
+}>;
 
 export const Layout: FC<LayoutProps> = ({ title, description, children }) => {
   return (
@@ -15,6 +15,8 @@ export const Layout: FC<LayoutProps> = ({ title, description, children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
         {description && <meta name="description" content={description} />}
+        <link rel="stylesheet" href="/styles/main.css" />
+        <script src="/scripts/theme.js" />
       </head>
       <body>
         <Header />
@@ -22,5 +24,5 @@ export const Layout: FC<LayoutProps> = ({ title, description, children }) => {
         <Footer />
       </body>
     </html>
-  )
-}
+  );
+};
