@@ -10,7 +10,7 @@
 | 4 | Markdown 対応 | 完了 |
 | 5 | 一覧・アーカイブ・タグページ | 完了 |
 | 6 | スタイリング | 完了 |
-| 7 | 追加機能とデプロイ | 未着手 |
+| 7 | 追加機能とデプロイ | 完了 |
 
 ---
 
@@ -167,13 +167,13 @@
 **ゴール**: Cloudflare Pages にデプロイして公開
 
 **タスク**
-- [ ] `wrangler.toml` を作成
-- [ ] OGP メタタグの追加
-- [ ] favicon の設定
-- [ ] 最終動作確認
-- [ ] GitHub リポジトリ作成 & push
-- [ ] Cloudflare Pages との連携設定
-- [ ] 本番デプロイ
+- [x] `wrangler.toml` を作成
+- [x] OGP メタタグの追加
+- [x] favicon の設定
+- [x] 最終動作確認
+- [x] GitHub リポジトリ作成 & push
+- [x] Cloudflare Pages との連携設定
+- [x] 本番デプロイ
 
 **成果物**
 - wrangler.toml
@@ -251,3 +251,20 @@
 - ダークモード対応（システム設定自動検知、手動切替、永続化）
 - 動作確認 OK
 - 次: Phase 7（追加機能とデプロイ）へ
+
+### 2025-01-22（続き2）
+- Phase 7 完了
+- ブログ名を「muchan log」に変更
+- wrangler.toml 作成（Cloudflare Pages 用）
+- OGP メタタグを追加（og:title, og:description, og:image, Twitter Card）
+- favicon.svg を作成
+- RSS フィードリンクを head に追加
+- Cloudflare アカウント作成、wrangler でログイン
+- Cloudflare Pages にデプロイ完了
+- 公開 URL: https://muchan-log.pages.dev
+
+---
+
+## 完了
+
+全 Phase が完了しました！ブログは https://muchan-log.pages.dev で公開中です。
