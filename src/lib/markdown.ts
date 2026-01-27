@@ -1,4 +1,5 @@
 import { unified } from "unified";
+import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
@@ -94,6 +95,7 @@ export async function parseMarkdown(content: string): Promise<MarkdownResult> {
   // Markdown を HTML に変換
   const result = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(processedContent);

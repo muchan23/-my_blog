@@ -219,6 +219,13 @@ table {
     border-collapse: collapse;
 }
 
+.post-content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 th,
 td {
     padding: var(--spacing-sm) var(--spacing-md);
@@ -547,6 +554,11 @@ footer {
     .archive-year li {
         flex-direction: column;
         gap: var(--spacing-xs);
+    }
+
+    .post-content table th,
+    .post-content table td {
+        white-space: nowrap;
     }
 }
 
