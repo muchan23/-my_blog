@@ -1,7 +1,9 @@
 import { unified } from "unified";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
+import rehypeKatex from "rehype-katex";
 import rehypeStringify from "rehype-stringify";
 import { createHighlighter, type Highlighter } from "shiki";
 
@@ -96,7 +98,9 @@ export async function parseMarkdown(content: string): Promise<MarkdownResult> {
   const result = await unified()
     .use(remarkParse)
     .use(remarkGfm)
+    .use(remarkMath)
     .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeKatex)
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(processedContent);
 

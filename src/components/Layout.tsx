@@ -58,6 +58,10 @@ export const Layout: FC<LayoutProps> = ({
         />
         {/* Styles */}
         <link rel="stylesheet" href="/styles/main.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+        />
         <script src="/scripts/theme.js" />
       </head>
       <body>

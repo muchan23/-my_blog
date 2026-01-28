@@ -6,3 +6,7 @@ bun run dev
 ```
 
 起動後は `http://localhost:5173` にアクセスしてください。
+
+## 公開サイト
+
+https://muchan-blog.pages.dev/
